@@ -46,8 +46,6 @@ public class IngresarActivity extends AppCompatActivity {
         String[] params = {editTextNickName.getText().toString()};
         String[] fields = {Constants.TABLA_FIELD_ID, Constants.TABLA_FIELD_NICKNAME, Constants.TABLA_FIELD_PASSWORD, Constants.TABLA_FIELD_NAME, Constants.TABLA_FIELD_LASTNAME, Constants.TABLA_FIELD_PHONE};
 
-        db.execSQL("");
-
 
         Cursor cursor = db.query(Constants.TABLA_NAME_USERS, fields, Constants.TABLA_FIELD_NICKNAME + "=?", params, null, null, null);
 
