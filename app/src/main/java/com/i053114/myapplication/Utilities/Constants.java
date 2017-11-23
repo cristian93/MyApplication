@@ -14,6 +14,7 @@ public class Constants {
     public static final String TABLA_FIELD_PHONE = "phone";
 
 
+
     public static final String CREATE_TABLE_USERS =
 
             "CREATE TABLE "+ TABLA_NAME_USERS+" ("+
@@ -23,5 +24,31 @@ public class Constants {
                     TABLA_FIELD_NAME+" TEXT, "+
                     TABLA_FIELD_LASTNAME+" TEXT,"+
                     TABLA_FIELD_PHONE+" TEXT)";
+
+
+    public static final String TABLA_NAME_IGLESIAS = "iglesias";
+    public static final String TABLA_FIELD_IDI = "idi";
+    public static final String TABLA_FIELD_NAMEI = "namei";
+    public static final String TABLA_FIELD_IMAGEN = "imagen";
+    public static final String TABLA_FIELD_DIRECTION = "direction";
+    public static final String TABLA_FIELD_HORARIOS = "horarios";
+    public static final String TABLA_FIELD_DESCRIPTION = "descripcion";
+
+
+
+
+    public static final String CREATE_TABLE_IGLESIAS =
+
+            "CREATE TABLE "+ TABLA_NAME_IGLESIAS+" ("+
+                    TABLA_FIELD_IDI+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    TABLA_FIELD_NAMEI+" TEXT, "+
+                    TABLA_FIELD_IMAGEN+" TEXT, "+
+                    TABLA_FIELD_DIRECTION+" TEXT, "+
+                    TABLA_FIELD_HORARIOS+" TEXT, "+
+                    TABLA_FIELD_DESCRIPTION+" TEXT)";
+
+
+
+
 
 }

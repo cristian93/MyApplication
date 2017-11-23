@@ -43,11 +43,13 @@ public class IngresarActivity extends AppCompatActivity {
 
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
 
-        String[] params = {editTextNickName.getText().toString()};
-        String[] fields = {Constants.TABLA_FIELD_ID, Constants.TABLA_FIELD_NICKNAME, Constants.TABLA_FIELD_PASSWORD, Constants.TABLA_FIELD_NAME, Constants.TABLA_FIELD_LASTNAME, Constants.TABLA_FIELD_PHONE};
+        //String[] params = {editTextNickName.getText().toString(),editTextPassword.getText().toString()};
+       // String[] fields = {Constants.TABLA_FIELD_ID, Constants.TABLA_FIELD_NICKNAME, Constants.TABLA_FIELD_PASSWORD, Constants.TABLA_FIELD_NAME, Constants.TABLA_FIELD_LASTNAME, Constants.TABLA_FIELD_PHONE};
 
 
-        Cursor cursor = db.query(Constants.TABLA_NAME_USERS, fields, Constants.TABLA_FIELD_NICKNAME + "=?", params, null, null, null);
+
+        Cursor cursor = db.rawQuery("select  * from users  where nickname = '"+editTextNickName.getText().toString()+"' and password = '"+editTextPassword.getText().toString()+"'",null);
+        //Cursor cursor = db.query(Constants.TABLA_NAME_USERS, fields, Constants.TABLA_FIELD_NICKNAME + "=?", params, null, null, null);
 
         while (cursor.moveToNext()) {
             User contact = new User();

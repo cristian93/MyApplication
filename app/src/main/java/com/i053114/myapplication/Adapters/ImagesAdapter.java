@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.i053114.myapplication.Models.Images;
 import com.i053114.myapplication.R;
@@ -45,22 +48,18 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.textViewtitle.setText(imageDatesList.get(position).getTitle());
-        holder.textViewurl.setText(imageDatesList.get(position).getUrl());
-        String [] images ;
-        images  = new String[ 6];
+        holder.textViewtitle.setText(imageDatesList.get(position).getNamei());
+        holder.textViewurl.setText(imageDatesList.get(position).getDescrpcion());
+        Picasso.with(context).load(imageDatesList.get(position).getImagen()).into(holder.imageView);
 
-        images [0]="http://www.turismopasto.gov.co/images/iglesias/tsanfelipe2.jpg";
-        images [1]="https://pasto-ciudad-sorpresa.wikispaces.com/file/view/templo_cristo_rey_pasto_narino_colombia_031508.jpg/262194364/312x456/templo_cristo_rey_pasto_narino_colombia_031508.jpg";
-        images [2]="https://media-cdn.tripadvisor.com/media/photo-s/04/39/57/a2/fachada-iglesia-catedral.jpg";
-        images [3]="http://www.turismopasto.gov.co/images/iglesias/tfatima2.jpg";
-        images [4]="http://static.panoramio.com/photos/original/3115787.jpg ";
-        images [5]="https://instanttanne.files.wordpress.com/2016/03/iglesia-san-agustin-pasto.jpg";
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        int number = (int ) (Math.random()*5);
-
-        Picasso.with(context).load(images[number]).into(holder.imageView);
 
 
 
@@ -76,12 +75,14 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
         TextView textViewtitle;
         TextView  textViewurl;
         ImageView imageView;
+        CheckBox checkBox;
 
         public ViewHolder(View item) {
             super(item);
             textViewtitle = (TextView) item.findViewById(R.id.id_tv_item_title);
             textViewurl = (TextView) item.findViewById(R.id.id_tv_item_url);
             imageView= (ImageView) item.findViewById(R.id.img_item_cardview);
+            checkBox = (CheckBox) item.findViewById(R.id.checkBox);
         }
 
 

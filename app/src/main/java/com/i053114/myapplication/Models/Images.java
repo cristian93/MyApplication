@@ -6,22 +6,58 @@ package com.i053114.myapplication.Models;
 
 public class Images {
 
-    private  String title;
-    private String url;
+    private  Integer idi;
+    private  String namei;
+    private String imagen;
+    private  String direction;
+    private  String horarios;
+    private String descrpcion;
 
-    public String getTitle() {
-        return title;
+    public Integer getIdi() {
+        return idi;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setIdi(Integer idi) {
+        this.idi = idi;
     }
 
-    public String getUrl() {
-        return url;
+    public String getNamei() {
+        return namei;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setNamei(String namei) {
+        this.namei = namei;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public String getHorarios() {
+        return horarios;
+    }
+
+    public void setHorarios(String horarios) {
+        this.horarios = horarios;
+    }
+
+    public String getDescrpcion() {
+        return descrpcion;
+    }
+
+    public void setDescrpcion(String descrpcion) {
+        this.descrpcion = descrpcion;
     }
 }

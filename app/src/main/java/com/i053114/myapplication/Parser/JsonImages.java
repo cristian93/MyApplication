@@ -9,12 +9,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by chris on 17/11/2017.
- */
+
+
+
 
 public class JsonImages {
-    public static List<Images> getData(String content) throws JSONException {
+    /**
+   // public static List<Images> getData(String content) throws JSONException {
         JSONArray jsonArray = new JSONArray(content);
         List<Images> countryList = new ArrayList<>();
         for (int i = 0; i < jsonArray.length(); i++){
@@ -28,4 +29,5 @@ public class JsonImages {
         }
         return countryList;
     }
+ */
 }

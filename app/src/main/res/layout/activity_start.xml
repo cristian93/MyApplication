@@ -12,32 +12,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_item">
+            <ImageView
+                android:layout_width="364dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logotipo_aplicacion"/>
+
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bIENVENIDO AL BUSCADOR DE IGLESIAS FINDGOD"
+            android:text="¡BIENVENIDO! A la aplicación que te permite encontrar la ubicación y los horarios de las iglesias de la ciudad de Pasto."
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:padding="45dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:padding="25dp"
             android:textColor="@android:color/black"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimaryDark"
             android:text="Login"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
             android:onClick="onClickIngresar"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
             android:text="Registrarse"
             android:onClick="onClickRegistrarse"
-            android:layout_marginTop="50dp"/>
+            android:textStyle="bold"
+            android:layout_marginTop="35dp"/>
 
     </LinearLayout>
 
