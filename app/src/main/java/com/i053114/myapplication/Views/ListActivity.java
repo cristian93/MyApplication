@@ -27,21 +27,22 @@ import com.i053114.myapplication.StartActivity;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends Activity {
 
-    ProgressBar progressBar;
-    Button button;
+
     SqliteHelper sqliteHelper;
     RecyclerView recyclerView;
-    List<Images> imageList;
+    List<Images> imageList= new ArrayList<>();
     ImagesAdapter imagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
 
         sqliteHelper = new SqliteHelper(this, "db_contacts", null, 1);
 
@@ -59,7 +60,7 @@ public class ListActivity extends Activity {
 
     public void listIgesias(){
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select idi,namei,imagen,direction,horarios,descripcion from iglesias order by idi desc", null);
+        Cursor cursor = db.rawQuery("select * from iglesias order by idi desc", null);
 
         while (cursor.moveToNext()){
             Images contact = new Images();
@@ -75,6 +76,7 @@ public class ListActivity extends Activity {
 
         if (imageList.size() != 0){
             processData();
+            Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Lista vacia", Toast.LENGTH_SHORT).show();
         }

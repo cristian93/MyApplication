@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.i053114.myapplication">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,13 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.RegisterItemsActivity"
-
-
-            />
+        <activity android:name=".Views.RegisterItemsActivity" />
         <activity android:name=".Views.ListActivity" />
         <activity android:name=".Views.DescriptionActivity" />
-        <activity android:name=".Views.IngresarActivity"></activity>
+        <activity android:name=".Views.IngresarActivity" />
+        <activity android:name=".Views.NewCommentActivity"></activity>
     </application>
 
 </manifest>

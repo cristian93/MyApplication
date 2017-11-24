@@ -50,17 +50,20 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
 
         holder.textViewtitle.setText(imageDatesList.get(position).getNamei());
         holder.textViewurl.setText(imageDatesList.get(position).getDescrpcion());
-        Picasso.with(context).load(imageDatesList.get(position).getImagen()).into(holder.imageView);
+
+
+       Picasso.with(context).load(imageDatesList.get(position).getImagen()).into(holder.imageView);
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+
+                if(compoundButton.isChecked()){
+                    Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+                }else{
+                Toast.makeText(context, "no", Toast.LENGTH_SHORT).show();}
             }
         });
-
-
-
 
 
     }

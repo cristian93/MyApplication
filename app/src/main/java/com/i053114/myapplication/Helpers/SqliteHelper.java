@@ -3,6 +3,7 @@ package com.i053114.myapplication.Helpers;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import com.i053114.myapplication.Utilities.Constants;
 
@@ -50,6 +51,7 @@ public class SqliteHelper  extends SQLiteOpenHelper{
 
 
 
+
     }
 
     @Override
@@ -57,6 +59,7 @@ public class SqliteHelper  extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_USERS);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_IGLESIAS);
         onCreate(db);
+
     }
 
 
