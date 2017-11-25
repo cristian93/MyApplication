@@ -9,7 +9,7 @@
     </style>
 
     <style name="EditTextWhite">
-        <item name="android:textColorHint">#ffab00</item>
+        <item name="android:textColorHint">#6200ea</item>
         <item name="android:textSize">30dp</item>
         <item name="colorAccent">#00c853</item>
         <item name="colorControlNormal">#6200ea</item>
