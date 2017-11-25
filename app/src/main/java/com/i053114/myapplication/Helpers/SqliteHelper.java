@@ -21,6 +21,8 @@ public class SqliteHelper  extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Constants.CREATE_TABLE_USERS);
         db.execSQL(Constants.CREATE_TABLE_IGLESIAS);
+        db.execSQL(Constants.CREATE_TABLE_FAVORITOS);
+
 
         db.execSQL("INSERT INTO iglesias (namei, imagen, direction, horarios, descripcion) VALUES" +
                 " ('san felipe', 'http://www.turismopasto.gov.co/images/iglesias/tsanfelipe2.jpg', 'calle falsa 123','horario falso','descripcion falsa')");
@@ -58,6 +60,7 @@ public class SqliteHelper  extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_USERS);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_IGLESIAS);
+        db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_FAVORITOS);
         onCreate(db);
 
     }
