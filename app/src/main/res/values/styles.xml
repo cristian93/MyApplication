@@ -16,6 +16,15 @@
         <item name="colorControlActivated">#0091ea</item>
     </style>
 
+    <style name="EditTextWhite1">
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textSize">30dp</item>
+        <item name="colorAccent">#00c853</item>
+        <item name="colorControlNormal">#6200ea</item>
+        <item name="colorControlActivated">#0091ea</item>
+    </style>
+
+
     <style name="RaisedButtonDark">
         <item name="colorButtonNormal">@color/colorPrimary</item>
         <item name="colorControlHighlight">@color/colorPrimaryDark</item>

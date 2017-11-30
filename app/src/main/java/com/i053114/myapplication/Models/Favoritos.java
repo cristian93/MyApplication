@@ -12,7 +12,16 @@ public class Favoritos {
     private String imagenf;
     private  String directionf;
     private  String horariosf;
+    private String descripcionf;
     private Integer iduserf;
+
+    public String getDescripcionf() {
+        return descripcionf;
+    }
+
+    public void setDescripcionf(String descripcionf) {
+        this.descripcionf = descripcionf;
+    }
 
     public Integer getIdf() {
         return idf;

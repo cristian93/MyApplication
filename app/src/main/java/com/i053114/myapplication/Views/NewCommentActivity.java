@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.i053114.myapplication.Helpers.SqliteHelper;
@@ -19,6 +20,7 @@ import com.i053114.myapplication.Utilities.Constants;
 public class NewCommentActivity extends Activity {
     EditText editTexttitle;
     EditText editTextDescription;
+    TextView textView;
 
     Integer Idcontact;
 
@@ -33,7 +35,9 @@ public class NewCommentActivity extends Activity {
 
         editTextDescription = (EditText) findViewById(R.id.id_et_comment_decription);
 
-      Idcontact =  getIntent().getExtras().getInt("idi2");
+
+
+      Idcontact =  Integer.parseInt(getIntent().getExtras().getString("idi2"));
 
         sqliteHelper = new SqliteHelper(this, " db_comment", null, 1);
 
@@ -61,14 +65,16 @@ public class NewCommentActivity extends Activity {
     public void createComment() {
 
         SQLiteDatabase db = sqliteHelper.getWritableDatabase();
+        Toast.makeText(this, "sqlite abre 1" , Toast.LENGTH_SHORT).show();
 
         ContentValues values = new ContentValues();
+        Toast.makeText(this, "sqlite abre 2" , Toast.LENGTH_SHORT).show();
 
         values.put(Constants.TABLA_FIELD_TITLEComent, editTexttitle.getText().toString());
        // Toast.makeText(this, editTexttitle.getText().toString(), Toast.LENGTH_SHORT).show();
 
         values.put(Constants.TABLA_FIELD_descriptionCOMMENT, editTextDescription.getText().toString());
-      // Toast.makeText(this, editTextDescription.getText().toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "sqlite abre 3", Toast.LENGTH_SHORT).show();
         values.put(Constants.TABLA_FIELD_IDIglesia, Idcontact);
 
        //Toast.makeText(this, ""+Idcontact, Toast.LENGTH_SHORT).show();
@@ -78,7 +84,7 @@ public class NewCommentActivity extends Activity {
 
         if (idResult >0){
             Toast.makeText(this, "comentario guardado", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, ListCommentActivity.class);
+            Intent intent = new Intent(this, ListActivity.class);
             startActivity(intent);
         }else{
             Toast.makeText(this, "comentario no guardado", Toast.LENGTH_SHORT).show();

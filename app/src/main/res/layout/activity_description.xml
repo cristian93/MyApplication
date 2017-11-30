@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/border_item"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:layout_margin="10dp"
-    android:padding="10dp">
+
+    >
 
     <ImageView
         android:id="@+id/img_post"
@@ -14,6 +15,7 @@
         android:layout_height="204dp"
         android:background="@drawable/border_item"
         android:scaleType="centerCrop"
+        android:padding="25dp"
         />
 
 
@@ -21,24 +23,29 @@
         android:id="@+id/id_tv_item_comment_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre"
+        android:text="                        Nombre"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@android:color/white"
+
+        />
+
     <TextView
         android:id="@+id/id_tv_item_comment_ubication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ubicacion"
         android:textStyle="bold"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/white"/>
     <TextView
         android:id="@+id/id_tv_item_comment_horary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="horario"
         android:textStyle="bold"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/id_tv_item_comment_description"
@@ -46,7 +53,8 @@
         android:layout_height="wrap_content"
         android:text="descripción"
         android:textStyle="bold"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClickShowWindowListComments"
+
             android:text="ver comentarios" />
     </LinearLayout>
 

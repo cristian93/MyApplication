@@ -52,7 +52,8 @@ public class Constants {
     public static final String TABLA_FIELD_TITLEComent = "titleComent";
     public static final String TABLA_FIELD_descriptionCOMMENT = "descriptionComment";
     public static final String TABLA_FIELD_IDIglesia = "idi2";
-    public static final String TABLA_FIELD_IDuser = "idu";
+    //public static final String TABLA_FIELD_IDuser = "idu";
+
     public static final String CREATE_TABLE_COMMENTSUSERS =
             "CREATE TABLE " + TABLA_NAME_COMMENTSUSERS + " (" +
                     TABLA_FIELD_IDCommentUsers + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

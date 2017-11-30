@@ -45,7 +45,7 @@ public class ListCommentActivity extends Activity {
 
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select idCommentUser,titleComent,descriptionComment,idi2 from commentsUsers  order by idCommentUser desc", null);
+        Cursor cursor = db.rawQuery("select idCommentUser,titleComent,descriptionComment from commentsUsers  order by idCommentUser desc", null);
 
         while (cursor.moveToNext()) {
             Comment comment = new Comment();

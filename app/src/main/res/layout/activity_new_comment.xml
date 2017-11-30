@@ -30,13 +30,14 @@
             android:id="@+id/id_et_comment_decription_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Comentario"
+            android:hint="Titulo"
             android:inputType="textMultiLine"
             android:scrollbars="vertical"
             android:overScrollMode="always"
             android:scrollbarStyle="insideInset"
             android:lines="1"
-            android:scrollHorizontally="false"/>
+            android:scrollHorizontally="false"
+            android:drawableEnd="@drawable/titulo"/>
 
         <EditText
             android:id="@+id/id_et_comment_decription"
@@ -48,7 +49,8 @@
             android:overScrollMode="always"
             android:scrollbarStyle="insideInset"
             android:lines="6"
-            android:scrollHorizontally="false"/>
+            android:scrollHorizontally="false"
+            android:drawableEnd="@drawable/comentario"/>
 
         <Button
             android:layout_width="match_parent"
@@ -56,7 +58,8 @@
             android:text="Crear comentario"
             android:layout_marginTop="20dp"
             android:theme="@style/RaisedButtonDark"
-            android:onClick="onclickCreateComment"/>
+            android:onClick="onclickCreateComment"
+            android:drawableBottom="@drawable/icons8_login_rounded_up_filled_50"/>
 
     </LinearLayout>
 

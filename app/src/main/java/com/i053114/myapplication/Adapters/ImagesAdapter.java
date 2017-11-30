@@ -20,6 +20,7 @@ import com.i053114.myapplication.Models.Images;
 import com.i053114.myapplication.R;
 import com.i053114.myapplication.Utilities.Constants;
 import com.i053114.myapplication.Views.DescriptionActivity;
+import com.i053114.myapplication.Views.ListaFavoritosActivity;
 import com.i053114.myapplication.Views.NewCommentActivity;
 import com.squareup.picasso.Picasso;
 
@@ -58,54 +59,68 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.textViewdesc.setText(imageDatesList.get(position).getHorarios());
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+        //holder.textViewdesc.setText(imageDatesList.get(position).getHorarios());
         holder.textViewtitle.setText(imageDatesList.get(position).getNamei());
-        holder.textViewurl.setText(imageDatesList.get(position).getImagen());
+        //holder.textViewurl.setText(imageDatesList.get(position).getImagen());
 
 
 
        Picasso.with(context).load(imageDatesList.get(position).getImagen()).into(holder.imageView);
 
-        if(holder.checkBox.isChecked()){
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
 
-            SQLiteDatabase db = sqliteHelper.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            values.put(Constants.TABLA_FIELD_NAMEF, imageDatesList.get(position).getNamei());
-            values.put(Constants.TABLA_FIELD_IMAGENF, imageDatesList.get(position).getImagen());
-            values.put(Constants.TABLA_FIELD_DIRECTIONF, imageDatesList.get(position).getDirection());
-            values.put(Constants.TABLA_FIELD_HORARIOSF, imageDatesList.get(position).getHorarios());
-            values.put(Constants.TABLA_FIELD_DESCRIPTIONF, imageDatesList.get(position).getDescrpcion());
-            values.put(Constants.TABLA_FIELD_IDUSERF, imageDatesList.get(position).getIdi());
+            @Override
+            public void onClick(View view) {
+                if (holder.checkBox.isChecked()) {
 
-            db.insert(Constants.TABLA_NAME_FAVORITOS, Constants.TABLA_FIELD_IDF, values);
+                    sqliteHelper = new SqliteHelper(context, "db_contacts", null, 1);
 
-            //textInputEditTextName.setText("");
-            //textInputEditTextPhone.setText("");
-            //textInputEditTextEmail.setText("");
+                    SQLiteDatabase db = sqliteHelper.getWritableDatabase();
 
-            //Intent intent = new Intent(this, ContactsActivity.class);
-            // startActivity(intent);
+                    ContentValues values = new ContentValues();
+                    values.put(Constants.TABLA_FIELD_NAMEF, imageDatesList.get(position).getNamei());
+                    values.put(Constants.TABLA_FIELD_IMAGENF, imageDatesList.get(position).getImagen());
+                    values.put(Constants.TABLA_FIELD_DIRECTIONF, imageDatesList.get(position).getDirection());
+                    values.put(Constants.TABLA_FIELD_HORARIOSF, imageDatesList.get(position).getHorarios());
+                    values.put(Constants.TABLA_FIELD_DESCRIPTIONF, imageDatesList.get(position).getDescrpcion());
+                    values.put(Constants.TABLA_FIELD_IDUSERF, 1);
 
-            Toast.makeText(context, "favoritos guardado", Toast.LENGTH_SHORT).show();
-        }else{
-            //Toast.makeText(context, "favoritos no", Toast.LENGTH_SHORT).show();
-        }
+                    db.insert(Constants.TABLA_NAME_FAVORITOS, Constants.TABLA_FIELD_IDF, values);
+
+                    Toast.makeText(context, "favoritos guardado", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(context, ListaFavoritosActivity.class);
+//                    view.getContext().startActivity(intent);
+                } else {
+
+
+                }
+            }
+        });
+
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ListaFavoritosActivity.class);
+               // intent.putExtra("idi", imageDatesList.get(position).getIdi());
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return  imageDatesList.size();
+        return imageDatesList.size();
     }
 
 
-    public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewtitle;
-        TextView  textViewurl;
+        TextView textViewurl;
         TextView textViewdesc;
-
         ImageView imageView;
+        Button button;
         CheckBox checkBox;
 
         public ViewHolder(View item) {
@@ -113,28 +128,26 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
             super(item);
             item.setOnClickListener(this);
             textViewtitle = (TextView) item.findViewById(R.id.id_tv_item_title);
-            textViewurl = (TextView) item.findViewById(R.id.id_tv_item_url);
-            textViewdesc =(TextView)item.findViewById(R.id.id_tv_item_comment_description222);
-
-
-
-                    imageView= (ImageView) item.findViewById(R.id.img_item_cardview);
+            //textViewurl = (TextView) item.findViewById(R.id.id_tv_item_url);
+            // textViewdesc = (TextView) item.findViewById(R.id.id_tv_item_comment_description222);
+            imageView = (ImageView) item.findViewById(R.id.img_item_cardview);
             checkBox = (CheckBox) item.findViewById(R.id.checkBox);
+            button = (Button)item.findViewById(R.id.btn_info);
         }
 
 
         @Override
         public void onClick(View view) {
 
-            Toast.makeText(context, "id_imagen"+imageDatesList.get(getLayoutPosition()).getIdi(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "id_imagen_list" + imageDatesList.get(getLayoutPosition()).getIdi(), Toast.LENGTH_SHORT).show();
 
-          Context contextItem = view.getContext();
+            Context contextItem = view.getContext();
             Intent intent = new Intent(context, DescriptionActivity.class);
 
-            intent.putExtra("idi",Integer.toString (imageDatesList.get(getLayoutPosition()).getIdi()));
-            intent.putExtra ("namei", imageDatesList.get(getLayoutPosition()).getNamei());
-            intent.putExtra ("imagen", imageDatesList.get(getLayoutPosition()).getImagen());
-            intent.putExtra("direction" ,imageDatesList.get(getLayoutPosition()).getDirection());
+            intent.putExtra("idi", Integer.toString(imageDatesList.get(getLayoutPosition()).getIdi()));
+            intent.putExtra("namei", imageDatesList.get(getLayoutPosition()).getNamei());
+            intent.putExtra("imagen", imageDatesList.get(getLayoutPosition()).getImagen());
+            intent.putExtra("direction", imageDatesList.get(getLayoutPosition()).getDirection());
             intent.putExtra("horarios", imageDatesList.get(getLayoutPosition()).getHorarios());
             intent.putExtra("descripcion", imageDatesList.get(getLayoutPosition()).getDescrpcion());
             contextItem.startActivity(intent);
@@ -143,5 +156,3 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder
     }
 
 }
-
-

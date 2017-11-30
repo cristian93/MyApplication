@@ -56,9 +56,9 @@ public class DescriptionActivity extends AppCompatActivity {
 
     public void onClickNewcommentactivity(View view) {
 
-        Toast.makeText(this, "id imagen"+id_imagen, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "id imagen descripcion"+ getIntent().getExtras().get("idi"), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, NewCommentActivity.class);
-       intent.putExtra ("idi2",Integer.parseInt(getIntent().getExtras().getString("idi")));
+       intent.putExtra ("idi2",getIntent().getExtras().getString("idi"));
         view.getContext().startActivity(intent);
     }
 

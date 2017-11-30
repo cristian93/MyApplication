@@ -1,133 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_margin="10dp"
-    android:layout_width="match_parent"
-    android:layout_height="200dp">
-
-    <RelativeLayout
-        android:layout_width="348dp"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/img_item_cardview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@mipmap/ic_launcher"
-            android:scaleType="centerCrop"/>
-
-        <LinearLayout
-            android:background="#53292929"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:padding="10dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="title:"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"/>
-                    <TextView
-                        android:id="@+id/id_tv_item_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Colombia"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"
-                        android:layout_marginLeft="10dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="url:"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"/>
-                    <TextView
-                        android:id="@+id/id_tv_item_url"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="www"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"
-                        android:layout_marginLeft="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:button="@drawable/checkbox_status" />
-
-                    <TextView
-                        android:id="@+id/id_tv_item_cv_count"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="10 megusta"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-
-                        />
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="descripcion:"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"/>
-                    <TextView
-                        android:id="@+id/id_tv_item_comment_description222"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="www"
-                        android:textSize="20sp"
-                        android:textColor="@android:color/white"
-                        android:layout_marginLeft="10dp"/>
-                </LinearLayout>
-
-<Button
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="info"
-    android:id="@+id/btn_info"
-    />
+    android:background="@drawable/border_item"
+    android:padding="10dp">
 
-            </LinearLayout>
+    <ImageView
+        android:id="@+id/img_item_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:background="@drawable/border_item"
+        android:scaleType="centerCrop"
+        android:padding="25dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#53292929"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title:"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_tv_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Colombia"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
 
-    </RelativeLayout>
+
+
+
+        <!--2do item-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/checkbox_status" />
+
+            <TextView
+                android:id="@+id/id_tv_item_cv_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10 megusta"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar favoritos"
+            android:drawableBottom="@drawable/icons8_mark_as_favorite_50"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
 
 </LinearLayout>

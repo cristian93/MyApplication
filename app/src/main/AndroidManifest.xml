@@ -24,7 +24,8 @@
         <activity android:name=".Views.DescriptionActivity" />
         <activity android:name=".Views.IngresarActivity" />
         <activity android:name=".Views.NewCommentActivity" />
-        <activity android:name=".Views.ListCommentActivity"></activity>
+        <activity android:name=".Views.ListCommentActivity" />
+        <activity android:name=".Views.ListaFavoritosActivity"></activity>
     </application>
 
 </manifest>

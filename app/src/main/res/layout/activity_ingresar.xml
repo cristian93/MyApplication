@@ -13,12 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="25dp">
+        android:padding="25dp"
+        android:background="@drawable/catedral_de_pasto"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=  "  INICIO DE SESIÓN"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/icons8_google_classroom_50"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="358dp"
             android:layout_height="wrap_content"
-            android:theme="@style/EditTextWhite"
+            android:theme="@style/EditTextWhite1"
             app:counterEnabled="true"
             app:counterMaxLength="30">
 
@@ -26,47 +43,52 @@
                 android:id="@+id/id_tv_detail_nickname_ingreso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="NickName" />
+                android:hint="           NickName"
+                android:textColor="@android:color/white"
+                android:drawableLeft="@drawable/icons8_web_accessibility_50"
+                />
         </android.support.design.widget.TextInputLayout>
 
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/EditTextWhite">
+            android:theme="@style/EditTextWhite1"
+            >
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/id_tv_detail_pasword_ingreso1"
                 android:layout_width="347dp"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
+                android:hint="          Contraseña"
+                android:textColor="@android:color/white"
+                android:drawableLeft="@drawable/icons8_privacy_50"
                 />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickSearchContact"
+            android:onClick="searchContact"
+            android:padding="15dp"
+            android:background="@drawable/border_item"
+            android:drawableBottom="@drawable/icons8_login_rounded_up_filled_50"
             android:text="Ingresar"/>
 
     </LinearLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/EditTextWhite">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/id_tv_detail_pasword_ingreso"
-            android:layout_width="347dp"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            />
-    </android.support.design.widget.TextInputLayout>
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/EditTextWhite">-->
+        <!--<android.support.design.widget.TextInputEditText-->
+            <!--android:id="@+id/id_tv_detail_pasword_ingreso"-->
+            <!--android:layout_width="347dp"-->
+            <!--android:layout_height="77dp"-->
+            <!--android:hint="Contraseña"-->
+            <!--/>-->
+    <!--</android.support.design.widget.TextInputLayout>-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClickSearchContact"
-        android:text="Ingresar"/>
+
 </LinearLayout>

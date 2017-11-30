@@ -1,5 +1,6 @@
 package com.i053114.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        sqliteHelper = new SqliteHelper(this, "db_contacts", null, 1);
+        sqliteHelper = new SqliteHelper( this,  "db_contacts",  null, 1);
 
 
         SQLiteDatabase db = sqliteHelper.getReadableDatabase();
