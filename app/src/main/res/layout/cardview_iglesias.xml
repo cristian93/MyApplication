@@ -29,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,7 +95,33 @@
 
 
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="descripcion:"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"/>
+                    <TextView
+                        android:id="@+id/id_tv_item_comment_description222"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="www"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:layout_marginLeft="10dp"/>
+                </LinearLayout>
 
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="info"
+    android:id="@+id/btn_info"
+    />
 
             </LinearLayout>
 

@@ -28,7 +28,6 @@ public class Constants {
                     TABLA_FIELD_PHONE + " TEXT)";
 
 
-
     // Iglesias ..................
     public static final String TABLA_NAME_IGLESIAS = "iglesias";
     public static final String TABLA_FIELD_IDI = "idi";
@@ -37,10 +36,7 @@ public class Constants {
     public static final String TABLA_FIELD_DIRECTION = "direction";
     public static final String TABLA_FIELD_HORARIOS = "horarios";
     public static final String TABLA_FIELD_DESCRIPTION = "descripcion";
-
-
     public static final String CREATE_TABLE_IGLESIAS =
-
             "CREATE TABLE " + TABLA_NAME_IGLESIAS + " (" +
                     TABLA_FIELD_IDI + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     TABLA_FIELD_NAMEI + " TEXT, " +
@@ -49,23 +45,25 @@ public class Constants {
                     TABLA_FIELD_HORARIOS + " TEXT, " +
                     TABLA_FIELD_DESCRIPTION + " TEXT)";
 
-//coments
 
-    public static final String TABLA_NAME_COMMENTS = "comments";
-    public static final String TABLA_FIELD_IDComment = "idComment";
+    // Coments- users
+    public static final String TABLA_NAME_COMMENTSUSERS = "commentsUsers";
+    public static final String TABLA_FIELD_IDCommentUsers = "idCommentUser";
     public static final String TABLA_FIELD_TITLEComent = "titleComent";
     public static final String TABLA_FIELD_descriptionCOMMENT = "descriptionComment";
-    public static final String TABLA_FIELD_IDUSER = "id_user";
-
-    public static final String CREATE_TABLE_COMMENTS =
-            "CREATE TABLE " + TABLA_NAME_COMMENTS + " (" +
-                    TABLA_FIELD_IDComment + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+    public static final String TABLA_FIELD_IDIglesia = "idi2";
+    public static final String TABLA_FIELD_IDuser = "idu";
+    public static final String CREATE_TABLE_COMMENTSUSERS =
+            "CREATE TABLE " + TABLA_NAME_COMMENTSUSERS + " (" +
+                    TABLA_FIELD_IDCommentUsers + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     TABLA_FIELD_TITLEComent + " TEXT, " +
                     TABLA_FIELD_descriptionCOMMENT + " TEXT, " +
-                    TABLA_FIELD_IDUSER + " INTEGER)";
+                    TABLA_FIELD_IDIglesia + " INTEGER) ";
 
 
 
+
+    // FAvoritos
     public static final String TABLA_NAME_FAVORITOS = "favoritos";
     public static final String TABLA_FIELD_IDF = "idf";
     public static final String TABLA_FIELD_NAMEF = "namef";
@@ -77,20 +75,16 @@ public class Constants {
 
 
 
-// FAvoritos
-
     public static final String CREATE_TABLE_FAVORITOS =
 
-            "CREATE TABLE "+ TABLA_NAME_FAVORITOS+" ("+
-                    TABLA_FIELD_IDF+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                    TABLA_FIELD_NAMEF+" TEXT, "+
-                    TABLA_FIELD_IMAGENF+" TEXT, "+
-                    TABLA_FIELD_DIRECTIONF+" TEXT, "+
-                    TABLA_FIELD_HORARIOSF+" TEXT, "+
-                    TABLA_FIELD_DESCRIPTIONF+" TEXT, "+
-                    TABLA_FIELD_IDUSERF+" TEXT)";
-
-
+            "CREATE TABLE " + TABLA_NAME_FAVORITOS + " (" +
+                    TABLA_FIELD_IDF + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    TABLA_FIELD_NAMEF + " TEXT, " +
+                    TABLA_FIELD_IMAGENF + " TEXT, " +
+                    TABLA_FIELD_DIRECTIONF + " TEXT, " +
+                    TABLA_FIELD_HORARIOSF + " TEXT, " +
+                    TABLA_FIELD_DESCRIPTIONF + " TEXT, " +
+                    TABLA_FIELD_IDUSERF + " TEXT)";
 
 
 }

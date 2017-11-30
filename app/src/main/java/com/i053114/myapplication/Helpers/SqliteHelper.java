@@ -22,6 +22,10 @@ public class SqliteHelper  extends SQLiteOpenHelper{
         db.execSQL(Constants.CREATE_TABLE_USERS);
         db.execSQL(Constants.CREATE_TABLE_IGLESIAS);
         db.execSQL(Constants.CREATE_TABLE_FAVORITOS);
+        db.execSQL(Constants.CREATE_TABLE_COMMENTSUSERS);
+
+
+        db.execSQL("INSERT INTO commentsUsers (titleComent, descriptionComment,idi2) VALUES ('aaa', 'aaa', 1)");
 
 
         db.execSQL("INSERT INTO iglesias (namei, imagen, direction, horarios, descripcion) VALUES" +
@@ -61,6 +65,7 @@ public class SqliteHelper  extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_USERS);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_IGLESIAS);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_FAVORITOS);
+        db.execSQL("DROP TABLE IF EXISTS "+Constants.TABLA_NAME_COMMENTSUSERS);
         onCreate(db);
 
     }

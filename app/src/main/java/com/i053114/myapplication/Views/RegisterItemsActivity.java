@@ -76,6 +76,7 @@ public class RegisterItemsActivity extends Activity {
         SQLiteDatabase db = sqliteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+
         values.put(Constants.TABLA_FIELD_NICKNAME, textInputEditTextNickName.getText().toString());
         values.put(Constants.TABLA_FIELD_PASSWORD, textInputEditTextPasword.getText().toString());
         values.put(Constants.TABLA_FIELD_NAME, textInputEditTextName.getText().toString());
@@ -83,7 +84,7 @@ public class RegisterItemsActivity extends Activity {
         values.put(Constants.TABLA_FIELD_PHONE, textInputEditTextPhone.getText().toString());
 
 
-        Long idResult = db.insert(Constants.TABLA_NAME_USERS, Constants.TABLA_FIELD_ID, values);
+        db.insert(Constants.TABLA_NAME_USERS, Constants.TABLA_FIELD_ID, values);
 
         Toast.makeText(this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
 
@@ -95,6 +96,7 @@ public class RegisterItemsActivity extends Activity {
 
 
         Intent intent = new Intent(this, ListActivity.class);
+      //  intent.putExtra ("id", Constants.TABLA_FIELD_ID);
         startActivity(intent);
     }
 
