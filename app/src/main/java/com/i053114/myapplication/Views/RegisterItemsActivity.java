@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.i053114.myapplication.Helpers.SqliteHelper;
 import com.i053114.myapplication.R;
+import com.i053114.myapplication.StartActivity;
 import com.i053114.myapplication.Utilities.Constants;
 
 public class RegisterItemsActivity extends Activity {
@@ -95,7 +96,7 @@ public class RegisterItemsActivity extends Activity {
         textInputEditTextLastName.setText("");
 
 
-        Intent intent = new Intent(this, ListActivity.class);
+        Intent intent = new Intent(this, StartActivity.class);
       //  intent.putExtra ("id", Constants.TABLA_FIELD_ID);
         startActivity(intent);
     }
